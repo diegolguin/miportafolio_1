@@ -1,8 +1,11 @@
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ierCHCHTOB10xNkXoZpVdkOXOAVhiU9Hz0gFBHjy521yW9qoNS'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ["127.0.0.1",
+    "localhost",
+    ".up.railway.app"
+   ]    
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,11 +45,13 @@ TEMPLATES = [{
 
 WSGI_APPLICATION = 'miportafolio.wsgi.application'
 
+import dj_database_url
+import os
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
 }
 
 LANGUAGE_CODE = 'es-cl'
