@@ -1,51 +1,80 @@
-Este proyecto corresponde a la evaluación de Programación Back-End con Django.
-Incluye la estructura de vistas, templates y rutas necesarias para ejecutarse correctamente.
+ Descripción 
 
--------------------------------------------------------------
-INSTRUCCIONES PARA EJECUTAR EL PROYECTO LOCALMENTE
--------------------------------------------------------------
-1. Clonar el repositorio desde GitHub:
-   git clone https://github.com/diegolguin/miportafolio_1.git
-   cd miportafolio_1
+Proyecto de portafolio desarrollado con Django 5.2.5, que incluye ejemplos de rutas, vistas y plantillas. Está configurado para funcionar tanto en local con SQLite como en Railway con PostgreSQL. 
 
-2. Crear un entorno virtual (opcional pero recomendado):
-   python -m venv venv
-   .\venv\Scripts\activate   (Windows)
-   source venv/bin/activate    (Linux/Mac)
+🚀 Ejecución en Local 
 
-3. Instalar dependencias:
-   pip install -r requirements.txt
+1. Clonar el repositorio 
 
-4. Aplicar migraciones a la base de datos:
-   python manage.py migrate
+git clone https://github.com/diegolguin/miportafolio_1.git 
 
-5. Ejecutar el servidor de desarrollo:
-   python manage.py runserver
+cd miportafolio_1/Diego_Sandoval 
 
-6. Abrir en el navegador el proyecto en el puerto por defecto (8000):
-   http://127.0.0.1:8000/
+2. Crear entorno virtual (opcional pero recomendado) 
 
-   - Para acceder al panel de administración (si hay superusuario creado):
-     http://127.0.0.1:8000/admin
+python -m venv venv 
 
--------------------------------------------------------------
-ACCESO APLICACIÓN DESPLEGADA (Railway)
--------------------------------------------------------------
-El proyecto también está desplegado en Railway para facilitar la revisión sin necesidad 
-de instalar nada localmente. Puede acceder en el siguiente link:
+.\venv\Scripts\activate   # En Windows 
 
-👉 https://miportafolio1-production.up.railway.app/
+source venv/bin/activate  # En Linux/Mac 
 
--------------------------------------------------------------
-NOTAS
--------------------------------------------------------------
-- El puerto por defecto en local es el 8000.
-- Railway gestiona automáticamente los puertos, por lo que solo se necesita el link.
-- El proyecto fue preparado para demostrar conocimientos en:
-  ✔️ Modelos y migraciones en Django
-  ✔️ Vistas y rutas (urls.py)
-  ✔️ Templates para mostrar contenido dinámico
-  ✔️ Configuración de despliegue en un servidor real (Railway)
+3. Instalar dependencias 
+
+pip install -r requirements.txt 
+
+4. Migrar la base de datos 
+
+python manage.py migrate 
+
+5. (Opcional) Crear superusuario para el panel admin 
+
+python manage.py createsuperuser 
+
+6. Levantar el servidor 
+
+python manage.py runserver 
+
+Abrir en navegador 👉 http://127.0.0.1:8000 
+
+🌐 Ejecución en Railway 
+
+1. Archivos importantes 
+
+- Procfile → indica cómo iniciar el servidor con Gunicorn. 
+
+- requirements.txt → lista de dependencias necesarias. 
+
+- settings.py → configurado para usar SQLite en local y PostgreSQL en Railway con dj-database-url. 
+
+2. Deploy 
+
+Conectar Railway con GitHub. 
+
+Crear un proyecto en Railway y desplegar desde este repo. 
+
+3. Migraciones en Railway 
+
+python manage.py migrate 
+
+python manage.py createsuperuser 
+
+4. Acceso 
+
+Abrir la URL pública que entrega Railway, por ejemplo: 
+
+https://miportafolio-production.up.railway.app 
+
+🛠 Tecnologías utilizadas 
+
+- Python 3.13.5 
+
+- Django 5.2.5 
+
+- Gunicorn 
+
+- WhiteNoise (archivos estáticos en producción) 
+
+- PostgreSQL (en Railway) / SQLite (en local) 
 
 -------------------------------------------------------------
 AUTOR
