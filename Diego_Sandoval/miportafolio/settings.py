@@ -2,10 +2,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ierCHCHTOB10xNkXoZpVdkOXOAVhiU9Hz0gFBHjy521yW9qoNS'
 DEBUG = False
-ALLOWED_HOSTS = ["127.0.0.1",
-    "localhost",
-    ".up.railway.app"
-   ]    
+ALLOWED_HOSTS = ["miportafolio1-production-26c5.up.railway.app", "127.0.0.1", "localhost"]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
