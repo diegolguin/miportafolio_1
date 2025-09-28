@@ -1,44 +1,36 @@
- Descripción 
+📂 Proyecto Portafolio – Django 
+
+📖 Descripción 
 
 Proyecto de portafolio desarrollado con Django 5.2.5, que incluye ejemplos de rutas, vistas y plantillas. Está configurado para funcionar tanto en local con SQLite como en Railway con PostgreSQL. 
 
 🚀 Ejecución en Local 
 
-1. Clonar el repositorio 
+Clonar el repositorio: 
+ git clone https://github.com/diegolguin/miportafolio_1.git 
+ cd miportafolio_1/Diego_Sandoval 
 
-git clone https://github.com/diegolguin/miportafolio_1.git 
+Crear entorno virtual (opcional pero recomendado): 
+ python -m venv venv 
+ .\venv\Scripts\activate   # En Windows 
+ source venv/bin/activate  # En Linux/Mac 
 
-cd miportafolio_1/Diego_Sandoval 
+Instalar dependencias: 
+ pip install -r requirements.txt 
 
-2. Crear entorno virtual (opcional pero recomendado) 
+Migrar la base de datos: 
+ python manage.py migrate 
 
-python -m venv venv 
+(Opcional) Crear superusuario: 
+ python manage.py createsuperuser 
 
-.\venv\Scripts\activate   # En Windows 
-
-source venv/bin/activate  # En Linux/Mac 
-
-3. Instalar dependencias 
-
-pip install -r requirements.txt 
-
-4. Migrar la base de datos 
-
-python manage.py migrate 
-
-5. (Opcional) Crear superusuario para el panel admin 
-
-python manage.py createsuperuser 
-
-6. Levantar el servidor 
-
-python manage.py runserver 
-
-Abrir en navegador 👉 http://127.0.0.1:8000 
+Levantar el servidor: 
+ python manage.py runserver 
+ Abrir en navegador 👉 http://127.0.0.1:8000 
 
 🌐 Ejecución en Railway 
 
-1. Archivos importantes 
+Archivos importantes: 
 
 - Procfile → indica cómo iniciar el servidor con Gunicorn. 
 
@@ -46,23 +38,24 @@ Abrir en navegador 👉 http://127.0.0.1:8000
 
 - settings.py → configurado para usar SQLite en local y PostgreSQL en Railway con dj-database-url. 
 
-2. Deploy 
+ 
+Deploy: 
 
-Conectar Railway con GitHub. 
+- Conectar Railway con GitHub. 
 
-Crear un proyecto en Railway y desplegar desde este repo. 
+- Crear un proyecto en Railway y desplegar desde este repo. 
 
-3. Migraciones en Railway 
+ 
+Migraciones en Railway: 
 
 python manage.py migrate 
 
 python manage.py createsuperuser 
 
-4. Acceso 
+ 
+Acceso a producción: 
 
-Abrir la URL pública que entrega Railway, por ejemplo: 
-
-https://miportafolio-production.up.railway.app 
+👉 https://miportafolio1-production-26c5.up.railway.app 
 
 🛠 Tecnologías utilizadas 
 
@@ -76,8 +69,7 @@ https://miportafolio-production.up.railway.app
 
 - PostgreSQL (en Railway) / SQLite (en local) 
 
--------------------------------------------------------------
-AUTOR
--------------------------------------------------------------
-Diego Sandoval
-Estudiante Analista Programador - INACAP
+👨‍💻 Autor 
+
+Diego Sandoval 
+Estudiante Analista Programador – INACAP 
