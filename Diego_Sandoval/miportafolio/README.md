@@ -69,6 +69,7 @@ Acceso a producción:
 
 - PostgreSQL (en Railway) / SQLite (en local) 
 
+
 👨‍💻 Autor 
 
 Diego Sandoval 

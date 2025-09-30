@@ -1,12 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Bienvenido a Mi Portafolio</h1>
-    <p>Explora mis proyectos.</p>
-    <a href="{% url 'lista' %}">Ver lista de proyectos</a>
+    <header>
+        <h1>Bienvenido a Mi Portafolio</h1>
+        <p>Explora mis proyectos y conoce más de lo que he creado.</p>
+        <a class="btn" href="{% url 'lista' %}">Ver lista de proyectos</a>
+    </header>
 </body>
 </html>
