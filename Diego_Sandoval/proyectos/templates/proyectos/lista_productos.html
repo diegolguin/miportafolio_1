@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Productos</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <h1>Lista de Productos</h1>
+
+  {% if productos %}
+    <ul>
+      {% for producto in productos %}
+        <li>
+          {{ producto.nombre }} - ${{ producto.precio }}
+          <!-- 🔽 Botones CRUD -->
+          <a href="{% url 'editar_producto' producto.id %}" class="btn-edit">Editar</a> |
+          <a href="{% url 'eliminar_producto' producto.id %}" class="btn-delete"
+             onclick="return confirm('¿Seguro que deseas eliminar este producto?')">Eliminar</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay productos registrados.</p>
+  {% endif %}
+
+  <a class="btn" href="{% url 'lista' %}">Volver</a>
+</body>
+</html>

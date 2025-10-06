@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Clientes</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+
+  {% if clientes %}
+    <ul>
+      {% for cliente in clientes %}
+        <li>
+          {{ cliente.nombre }} — {{ cliente.email }} — {{ cliente.telefono }}
+          <!-- 🔽 Botones CRUD -->
+          <a href="{% url 'editar_cliente' cliente.id %}" class="btn-edit">Editar</a> |
+          <a href="{% url 'eliminar_cliente' cliente.id %}" class="btn-delete"
+             onclick="return confirm('¿Seguro que deseas eliminar este cliente?')">Eliminar</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay clientes registrados.</p>
+  {% endif %}
+
+  <a class="btn" href="{% url 'lista' %}">Volver</a>
+</body>
+</html>
+

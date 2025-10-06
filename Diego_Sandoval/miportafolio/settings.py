@@ -1,7 +1,10 @@
 from pathlib import Path
+import os   # 👈 AGREGA ESTO
+import dj_database_url   # si lo usas más abajo
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ierCHCHTOB10xNkXoZpVdkOXOAVhiU9Hz0gFBHjy521yW9qoNS'
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 ALLOWED_HOSTS = ["miportafolio1-production-26c5.up.railway.app", "127.0.0.1", "localhost"]
 
 
@@ -30,7 +33,7 @@ ROOT_URLCONF = 'miportafolio.urls'
 
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [],
+    'DIRS': [BASE_DIR / "templates"],
     'APP_DIRS': True,
     'OPTIONS': {
         'context_processors': [
@@ -63,10 +66,14 @@ TIME_ZONE = 'America/Santiago'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Redirecciones después del login y logout
+LOGIN_URL = '/login/'           # si intenta entrar sin iniciar sesión, lo redirige aquí
+LOGIN_REDIRECT_URL = '/lista/'  # después de iniciar sesión, lo lleva a la lista de proyectos
+LOGOUT_REDIRECT_URL = '/login/' # después de cerrar sesión, vuelve al login
