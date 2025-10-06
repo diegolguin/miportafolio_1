@@ -12,7 +12,20 @@
     <p class="usuario">
         Bienvenido, <strong>{{ user.username }}</strong> 👋
     </p>
-    <a class="btn-logout" href="{% url 'logout' %}">Cerrar sesión</a>
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn-logout" style="
+            background-color: #8b5cf6;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;">
+            Cerrar sesión
+        </button>
+    </form>
+    
 </header>
 
 <main>
